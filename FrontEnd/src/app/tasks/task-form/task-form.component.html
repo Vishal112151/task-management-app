@@ -20,40 +20,45 @@
 
     <form [formGroup]="taskForm" (ngSubmit)="submit()">
 
-      <!-- Title -->
+      <!-- Task Title -->
 
-      <mat-form-field appearance="outline" class="full-width">
+      <mat-form-field appearance="fill" class="full-width">
 
         <mat-label>Task Title</mat-label>
 
-        <input matInput formControlName="title">
+        <input
+          matInput
+          formControlName="title">
 
       </mat-form-field>
 
       <!-- Description -->
 
-      <mat-form-field appearance="outline" class="full-width">
+      <mat-form-field appearance="fill" class="full-width">
 
         <mat-label>Description</mat-label>
 
-        <textarea matInput rows="4" formControlName="description">
+        <textarea
+          matInput
+          rows="4"
+          formControlName="description">
         </textarea>
 
       </mat-form-field>
 
-      <!-- ONE ROW -->
+      <!-- Row -->
 
-      <div class="three-column-row">
+      <div class="form-grid">
 
-        <!-- Priority -->
-
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="fill">
 
           <mat-label>Priority</mat-label>
 
           <mat-select formControlName="priority">
 
-            <mat-option *ngFor="let option of priorities" [value]="option">
+            <mat-option
+              *ngFor="let option of priorities"
+              [value]="option">
 
               {{ option }}
 
@@ -63,15 +68,17 @@
 
         </mat-form-field>
 
-        <!-- Status -->
-
-        <mat-form-field appearance="outline" *ngIf="!statusDisabled">
+        <mat-form-field
+          appearance="fill"
+          *ngIf="!statusDisabled">
 
           <mat-label>Status</mat-label>
 
           <mat-select formControlName="status">
 
-            <mat-option *ngFor="let option of statuses" [value]="option">
+            <mat-option
+              *ngFor="let option of statuses"
+              [value]="option">
 
               {{ option }}
 
@@ -81,18 +88,22 @@
 
         </mat-form-field>
 
-        <!-- Due Date -->
-
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="fill">
 
           <mat-label>Due Date</mat-label>
 
-          <input matInput [matDatepicker]="picker" formControlName="dueDate">
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="dueDate">
 
-          <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker">
           </mat-datepicker-toggle>
 
-          <mat-datepicker #picker></mat-datepicker>
+          <mat-datepicker #picker>
+          </mat-datepicker>
 
         </mat-form-field>
 
@@ -102,14 +113,18 @@
 
       <div class="action-buttons">
 
-        <button type="button" class="btn btn-outline-secondary" (click)="goBack()">
+        <button
+          type="button"
+          class="btn cancel-btn"
+          (click)="goBack()">
 
-          <i class="bi bi-arrow-left me-2"></i>
-          Cancel
+          ← Cancel
 
         </button>
 
-        <button type="submit" class="btn save-btn">
+        <button
+          type="submit"
+          class="btn save-btn">
 
           💾 Save Task
 
