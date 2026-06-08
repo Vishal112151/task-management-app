@@ -2,15 +2,20 @@
 node_modules/
 .angular/
 dist/
+coverage/
 
 # ASP.NET
 bin/
 obj/
+appsettings.Development.json
 
 # Visual Studio
 .vs/
 *.user
 *.suo
+
+# VS Code
+.vscode/
 
 # Environment
 .env

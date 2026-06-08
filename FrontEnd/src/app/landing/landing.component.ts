@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
     selector: 'app-landing',
     standalone: true,
     imports: [CommonModule, RouterModule, MatCardModule, MatButtonModule],
-    template:'./landing.component.html',
-    styles: ['./landing.component.css']
+    templateUrl:'./landing.component.html',
+    styleUrls: ['./landing.component.css']
 })
 export class LandingComponent { }
