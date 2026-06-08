@@ -1,0 +1,123 @@
+<div class="auth-container">
+
+  <!-- Background Effects -->
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <div class="auth-card">
+
+    <!-- LEFT PANEL -->
+
+    <div class="brand-section">
+
+      <div class="logo-box">
+        🚀
+      </div>
+
+      <h1>Create Account</h1>
+
+      <p class="brand-desc">
+        Join thousands of users managing tasks, projects and productivity
+        with a modern and powerful workspace.
+      </p>
+
+      <div class="feature-list">
+
+        <div class="feature-item">
+          <i class="bi bi-check-circle-fill"></i>
+          <span>Smart Task Management</span>
+        </div>
+
+        <div class="feature-item">
+          <i class="bi bi-check-circle-fill"></i>
+          <span>Cloud Sync & Backup</span>
+        </div>
+
+        <div class="feature-item">
+          <i class="bi bi-check-circle-fill"></i>
+          <span>Real-time Collaboration</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+
+    <div class="form-section">
+
+      <div class="form-header">
+
+        <h2>Get Started</h2>
+
+        <p>Create your account in seconds</p>
+
+      </div>
+
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
+
+        <!-- NAME -->
+
+        <mat-form-field appearance="outline" class="full-width">
+
+          <mat-label>Name</mat-label>
+
+          <mat-icon matPrefix>person</mat-icon>
+
+          <input matInput formControlName="name">
+
+        </mat-form-field>
+
+        <!-- EMAIL -->
+
+        <mat-form-field appearance="outline" class="full-width">
+
+          <mat-label>Email</mat-label>
+
+          <mat-icon matPrefix>mail</mat-icon>
+
+          <input matInput formControlName="email">
+
+        </mat-form-field>
+
+        <!-- PASSWORD -->
+
+        <mat-form-field appearance="outline" class="full-width">
+
+          <mat-label>Password</mat-label>
+
+          <mat-icon matPrefix>lock</mat-icon>
+
+          <input matInput type="password" formControlName="password">
+
+        </mat-form-field>
+
+        <button type="submit" class="btn create-btn">
+
+          Create Account
+
+        </button>
+
+        <div class="divider">
+          <span>OR</span>
+        </div>
+
+        <div class="login-row">
+
+          <span>Already have an account?</span>
+
+          <a routerLink="/login" class="login-link">
+
+            Login →
+
+          </a>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

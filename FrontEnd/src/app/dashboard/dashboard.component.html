@@ -1,0 +1,222 @@
+<section class="dashboard-page">
+
+  <!-- Header -->
+
+  <div class="dashboard-header">
+
+    <div>
+      <h1>Dashboard</h1>
+
+      <p class="subtitle">
+        Manage and track your tasks efficiently.
+      </p>
+    </div>
+
+    <button class="add-task-btn" (click)="addTask()">
+
+      <i class="bi bi-plus-circle me-2"></i>
+      Create Task
+
+    </button>
+
+  </div>
+
+  <!-- Metrics -->
+
+  <div class="metrics-grid">
+
+    <div class="metric-card total">
+
+      <div class="metric-icon">📋</div>
+
+      <div>
+
+        <div class="metric-label">
+          Total Tasks
+        </div>
+
+        <div class="metric-value">
+          {{ totalTasks }}
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="metric-card pending">
+
+      <div class="metric-icon">⏳</div>
+
+      <div>
+
+        <div class="metric-label">
+          Pending
+        </div>
+
+        <div class="metric-value">
+          {{ pendingTasks }}
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="metric-card progress">
+
+      <div class="metric-icon">🚀</div>
+
+      <div>
+
+        <div class="metric-label">
+          In Progress
+        </div>
+
+        <div class="metric-value">
+          {{ inProgressTasks }}
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="metric-card completed">
+
+      <div class="metric-icon">✅</div>
+
+      <div>
+
+        <div class="metric-label">
+          Completed
+        </div>
+
+        <div class="metric-value">
+          {{ completedTasks }}
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Tasks Table -->
+
+  <div class="table-card">
+
+    <div class="table-header">
+
+      <h3>
+        My Tasks
+      </h3>
+
+    </div>
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>Title</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Due Date</th>
+            <th>Actions</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let task of tasks" [ngClass]="{
+              'pending-row': task.status === 'Pending',
+              'progress-row': task.status === 'InProgress',
+              'done-row': task.status === 'Done'
+            }">
+
+            <td>
+
+              <div class="task-title">
+                {{ task.title }}
+              </div>
+
+              <div class="task-description">
+                {{ task.description }}
+              </div>
+
+            </td>
+
+            <td>
+
+              <span class="priority-badge" [ngClass]="{
+                  'low-priority': task.priority === 'Low',
+                  'medium-priority': task.priority === 'Medium',
+                  'high-priority': task.priority === 'High'
+                }">
+
+                {{ task.priority }}
+
+              </span>
+
+            </td>
+
+            <td>
+
+              <span class="status-badge" [ngClass]="{
+                  'pending-status': task.status === 'Pending',
+                  'progress-status': task.status === 'InProgress',
+                  'done-status': task.status === 'Done'
+                }">
+
+                {{ task.status }}
+
+              </span>
+
+            </td>
+
+            <td>
+
+              {{ task.dueDate | date:'mediumDate' }}
+
+            </td>
+
+            <td>
+
+              <div class="action-buttons">
+
+                <button class="action-btn view-btn" (click)="viewDetails(task)">
+
+                  👁
+
+                </button>
+
+                <button class="action-btn edit-btn" (click)="editTask(task)">
+
+                  ✏
+
+                </button>
+
+                <button class="action-btn delete-btn" (click)="deleteTask(task)">
+
+                  🗑
+
+                </button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,126 @@
+<div class="task-details-container" *ngIf="task; else noTask">
+
+  <div class="details-card">
+
+    <div class="card-header">
+
+      <div>
+
+        <h1>
+          <i class="bi bi-clipboard-check me-2"></i>
+          Task Details
+        </h1>
+
+        <p>
+          Review and manage your task information.
+        </p>
+
+      </div>
+
+      <span class="status-pill" [ngClass]="{
+          'pending': task.status === 'Pending',
+          'progress': task.status === 'InProgress',
+          'done': task.status === 'Done'
+        }">
+
+        {{ task.status }}
+
+      </span>
+
+    </div>
+
+    <div class="task-content">
+
+      <div class="info-block">
+
+        <label>Task Title</label>
+
+        <h2>{{ task.title }}</h2>
+
+      </div>
+
+      <div class="info-block">
+
+        <label>Description</label>
+
+        <p>{{ task.description }}</p>
+
+      </div>
+
+      <div class="info-grid">
+
+        <div class="info-item">
+
+          <label>Priority</label>
+
+          <span class="priority-pill" [ngClass]="{
+              'high': task.priority === 'High',
+              'medium': task.priority === 'Medium',
+              'low': task.priority === 'Low'
+            }">
+
+            {{ task.priority }}
+
+          </span>
+
+        </div>
+
+        <div class="info-item">
+
+          <label>Status</label>
+
+          <span>{{ task.status }}</span>
+
+        </div>
+
+        <div class="info-item">
+
+          <label>Due Date</label>
+
+          <span>
+            {{ task.dueDate | date:'mediumDate' }}
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="action-bar">
+
+      <button class="btn btn-outline-secondary" (click)="goBack()">
+
+        ← Dashboard
+
+      </button>
+
+      <button
+  class="btn btn-primary"
+  [routerLink]="['/tasks/edit', task.id]">
+
+  <i class="bi bi-pencil-square me-2"></i>
+  Edit Task
+
+</button>
+    </div>
+
+  </div>
+
+</div>
+
+<ng-template #noTask>
+
+  <div class="details-card text-center">
+
+    <h3>Task not found</h3>
+
+    <button class="btn btn-primary mt-3" (click)="goBack()">
+
+      Back to Dashboard
+
+    </button>
+
+  </div>
+
+</ng-template>

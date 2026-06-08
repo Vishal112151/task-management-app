@@ -1,0 +1,374 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+/* =========================
+   PAGE
+========================= */
+
+.auth-container {
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #1e293b,
+      #312e81
+    );
+}
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.shape-1 {
+
+  width: 350px;
+  height: 350px;
+
+  top: -120px;
+  left: -120px;
+
+  background: #6366f1;
+}
+
+.shape-2 {
+
+  width: 350px;
+  height: 350px;
+
+  bottom: -120px;
+  right: -120px;
+
+  background: #06b6d4;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.auth-card {
+
+  width: 100%;
+  max-width: 1200px;
+  min-height: 700px;
+
+  display: flex;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  background:
+    rgba(255,255,255,.08);
+
+  backdrop-filter: blur(20px);
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
+  box-shadow:
+    0 20px 80px rgba(0,0,0,.45);
+
+  z-index: 10;
+}
+
+/* =========================
+   LEFT PANEL
+========================= */
+
+.brand-section {
+
+  width: 40%;
+
+  padding: 70px 60px;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-box {
+
+  width: 90px;
+  height: 90px;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255,255,255,.12);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 42px;
+
+  margin-bottom: 40px;
+}
+
+.brand-section h1 {
+
+  font-size: 3.2rem;
+  font-weight: 800;
+
+  margin-bottom: 25px;
+}
+
+.brand-desc {
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,.75);
+
+  margin-bottom: 50px;
+}
+
+.feature-list {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+.feature-item {
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  font-size: 17px;
+}
+
+.feature-item i {
+
+  color: #22c55e;
+
+  font-size: 20px;
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
+
+.form-section {
+
+  width: 60%;
+
+  background: white;
+
+  padding: 70px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-header {
+
+  margin-bottom: 35px;
+}
+
+.form-header h2 {
+
+  font-size: 2.3rem;
+  font-weight: 700;
+
+  margin-bottom: 10px;
+
+  color: #0f172a;
+}
+
+.form-header p {
+
+  color: #64748b;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.full-width {
+
+  width: 100%;
+
+  margin-bottom: 18px;
+}
+
+::ng-deep .mat-mdc-form-field {
+  width: 100%;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  border-radius: 14px !important;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.create-btn {
+
+  width: 100%;
+  height: 56px;
+
+  margin-top: 10px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  transition: .3s;
+}
+
+.create-btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(79,70,229,.35);
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+
+  margin: 28px 0;
+
+  text-align: center;
+
+  position: relative;
+}
+
+.divider::before {
+
+  content: '';
+
+  position: absolute;
+
+  top: 50%;
+  left: 0;
+  right: 0;
+
+  height: 1px;
+
+  background: #e2e8f0;
+}
+
+.divider span {
+
+  position: relative;
+
+  background: white;
+
+  padding: 0 15px;
+
+  color: #64748b;
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-row span {
+
+  color: #64748b;
+}
+
+
+.login-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-link {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+.login-link:hover {
+  color: #2563eb;
+  transform: translateX(3px);
+}
+.login-row .btn {
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 992px) {
+
+  .auth-card {
+
+    flex-direction: column;
+
+    min-height: auto;
+  }
+
+  .brand-section,
+  .form-section {
+
+    width: 100%;
+  }
+
+  .brand-section {
+
+    padding: 50px 30px;
+  }
+
+  .form-section {
+
+    padding: 40px 30px;
+  }
+
+  .brand-section h1 {
+
+    font-size: 2.2rem;
+  }
+
+  .form-header h2 {
+
+    font-size: 2rem;
+  }
+}

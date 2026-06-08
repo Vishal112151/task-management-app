@@ -1,0 +1,9 @@
+<section class="task-edit-page">
+  <ng-container *ngIf="task; else loading">
+    <app-task-form [task]="task" (save)="updateTask($event)"></app-task-form>
+  </ng-container>
+
+  <ng-template #loading>
+    <p>Loading task details...</p>
+  </ng-template>
+</section>

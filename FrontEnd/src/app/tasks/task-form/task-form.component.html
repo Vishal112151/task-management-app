@@ -1,0 +1,124 @@
+<div class="task-form-container">
+
+  <div class="task-form-card">
+
+    <div class="form-header">
+
+      <div class="form-icon">
+        ✏️
+      </div>
+
+      <h2>
+        {{ task ? 'Edit Task' : 'Create New Task' }}
+      </h2>
+
+      <p>
+        Fill in the details below to manage your task efficiently.
+      </p>
+
+    </div>
+
+    <form [formGroup]="taskForm" (ngSubmit)="submit()">
+
+      <!-- Title -->
+
+      <mat-form-field appearance="outline" class="full-width">
+
+        <mat-label>Task Title</mat-label>
+
+        <input matInput formControlName="title">
+
+      </mat-form-field>
+
+      <!-- Description -->
+
+      <mat-form-field appearance="outline" class="full-width">
+
+        <mat-label>Description</mat-label>
+
+        <textarea matInput rows="4" formControlName="description">
+        </textarea>
+
+      </mat-form-field>
+
+      <!-- ONE ROW -->
+
+      <div class="three-column-row">
+
+        <!-- Priority -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Priority</mat-label>
+
+          <mat-select formControlName="priority">
+
+            <mat-option *ngFor="let option of priorities" [value]="option">
+
+              {{ option }}
+
+            </mat-option>
+
+          </mat-select>
+
+        </mat-form-field>
+
+        <!-- Status -->
+
+        <mat-form-field appearance="outline" *ngIf="!statusDisabled">
+
+          <mat-label>Status</mat-label>
+
+          <mat-select formControlName="status">
+
+            <mat-option *ngFor="let option of statuses" [value]="option">
+
+              {{ option }}
+
+            </mat-option>
+
+          </mat-select>
+
+        </mat-form-field>
+
+        <!-- Due Date -->
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Due Date</mat-label>
+
+          <input matInput [matDatepicker]="picker" formControlName="dueDate">
+
+          <mat-datepicker-toggle matSuffix [for]="picker">
+          </mat-datepicker-toggle>
+
+          <mat-datepicker #picker></mat-datepicker>
+
+        </mat-form-field>
+
+      </div>
+
+      <!-- Buttons -->
+
+      <div class="action-buttons">
+
+        <button type="button" class="btn btn-outline-secondary" (click)="goBack()">
+
+          <i class="bi bi-arrow-left me-2"></i>
+          Cancel
+
+        </button>
+
+        <button type="submit" class="btn save-btn">
+
+          💾 Save Task
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

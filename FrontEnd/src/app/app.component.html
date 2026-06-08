@@ -1,0 +1,35 @@
+<mat-toolbar class="custom-navbar" *ngIf="showNavbar">
+
+  <div class="brand-section">
+
+    <div class="brand-logo">
+      🚀
+    </div>
+
+    <div class="brand-text">
+
+      <h3>{{ title }}</h3>
+
+      <small>Task Management System</small>
+
+    </div>
+
+  </div>
+
+  <span class="spacer"></span>
+
+  <button
+    class="logout-btn"
+    (click)="logout()">
+
+    <i class="bi bi-box-arrow-right me-2"></i>
+
+    Logout
+
+  </button>
+
+</mat-toolbar>
+
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>
